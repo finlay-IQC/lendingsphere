@@ -59,8 +59,6 @@ img,svg{display:block}
 .btn-navy:hover{background:var(--navy-2)}
 .btn-white{background:var(--white);color:var(--navy)}
 .btn-white:hover{background:var(--grey)}
-.btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,.7)}
-.btn-ghost:hover{background:var(--navy-2);border-color:var(--white)}
 .btn-sm{min-height:40px;padding:0 16px;font-size:14px}
 
 /* Header */
@@ -103,9 +101,7 @@ img,svg{display:block}
 }
 .hero h1 em{font-style:normal;color:var(--accent)}
 .hero-sub{margin-top:22px;font-size:clamp(1rem,2vw,1.175rem);color:var(--muted-dark);max-width:62ch}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
-.hero-ctas .btn{flex:1 1 220px}
-.disclaimer{margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--muted-dark);max-width:62ch;opacity:.9}
+.disclaimer{margin-top:24px;font-size:12.5px;line-height:1.55;color:var(--muted-dark);max-width:62ch;opacity:.9}
 .stats{
   display:grid;grid-template-columns:1fr 1fr;margin:48px 0 0;padding:0;
   border-top:1px solid var(--navy-line);
@@ -200,7 +196,6 @@ img,svg{display:block}
 /* ≥640px */
 @media (min-width:640px){
   :root{--gutter:32px}
-  .hero-ctas .btn{flex:0 0 auto}
   .cases{grid-template-columns:1fr 1fr}
   #apply{padding:28px 16px 16px}
 }
@@ -248,10 +243,6 @@ img,svg{display:block}
         <span class="kicker">For UK Limited Companies</span>
         <h1 id="hero-title">Unsecured business funding. Matched to the right lender, <em>decided in days.</em></h1>
         <p class="hero-sub">Working capital, tax bills, contract funding, growth. No property security required. We assess your situation, match you with the lender on our panel most likely to say yes, and manage the process end to end.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-white" href="#apply">Start the Application</a>
-          <a class="btn btn-ghost" href="#how">How It Works</a>
-        </div>
         <p class="disclaimer">Funding is subject to lender approval. A personal guarantee is typically required. Lending Sphere is a commercial finance broker, not a lender.</p>
       </div>
 
