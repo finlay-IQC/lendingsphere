@@ -157,12 +157,7 @@ img,svg{display:block}
   background:var(--white);color:var(--navy);border-radius:12px;
   padding:24px 12px 12px;box-shadow:0 12px 40px rgba(0,0,0,.25);
 }
-.apply-title{padding:0 8px;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
-.apply-sub{padding:0 8px;margin-top:8px;font-size:14.5px;line-height:1.5;color:var(--muted)}
-.fee{
-  display:inline-block;margin:14px 8px 8px;padding:7px 12px;border-radius:8px;
-  background:var(--accent);color:var(--navy);font-size:13px;font-weight:600;line-height:1.4;
-}
+.apply-title{padding:0 8px 16px;font-size:clamp(1.75rem,6vw,2.25rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;text-align:center;text-wrap:balance}
 #apply iframe{display:block;width:100%;border:0;min-height:721px}
 
 /* FAQ */
@@ -248,9 +243,7 @@ img,svg{display:block}
 
       <div class="hero-form">
         <div id="apply" aria-labelledby="apply-title">
-          <h2 class="apply-title" id="apply-title">Start your application.</h2>
-          <p class="apply-sub">Under five minutes. If we can help, you'll get a call from our team. If we can't, we'll tell you straight away rather than waste your time.</p>
-          <p class="fee">£495 application fee · credited against your success fee on completion</p>
+          <h2 class="apply-title" id="apply-title">Apply in under one minute</h2>
           <!-- GHL FORM EMBED: Lending Sphere Form (c6QTePsks4sXNNiQg7uq) -->
           <iframe
             src="https://api.leadconnectorhq.com/widget/form/c6QTePsks4sXNNiQg7uq"
