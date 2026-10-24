@@ -154,18 +154,18 @@ img,svg{display:block}
 .note p+p{margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
 .note p strong{color:var(--navy);font-weight:600}
 
-/* Application / GHL embed slot */
-.fee{
-  display:inline-block;margin:0 0 20px;padding:9px 16px;border-radius:999px;
-  background:var(--accent);color:var(--navy);font-size:14px;font-weight:600;line-height:1.4;
-}
-.fee-row{text-align:center}
+/* Hero form (GHL embed) */
+.hero-grid{display:grid;gap:32px}
+.hero-grid .stats{margin-top:8px}
 #apply{
-  scroll-margin-top:calc(var(--header-h) + 80px);
-  max-width:760px;margin:0 auto;background:var(--white);
-  border:1px solid var(--line);border-radius:12px;
-  padding:24px 16px;
-  box-shadow:0 1px 2px rgba(0,57,79,.04),0 8px 24px rgba(0,57,79,.06);
+  background:var(--white);color:var(--navy);border-radius:12px;
+  padding:24px 12px 12px;box-shadow:0 12px 40px rgba(0,0,0,.25);
+}
+.apply-title{padding:0 8px;font-size:22px;font-weight:800;letter-spacing:-.02em;line-height:1.2}
+.apply-sub{padding:0 8px;margin-top:8px;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.fee{
+  display:inline-block;margin:14px 8px 8px;padding:7px 12px;border-radius:8px;
+  background:var(--accent);color:var(--navy);font-size:13px;font-weight:600;line-height:1.4;
 }
 #apply iframe{display:block;width:100%;border:0;min-height:721px}
 
@@ -202,7 +202,7 @@ img,svg{display:block}
   :root{--gutter:32px}
   .hero-ctas .btn{flex:0 0 auto}
   .cases{grid-template-columns:1fr 1fr}
-  #apply{padding:32px}
+  #apply{padding:28px 16px 16px}
 }
 /* ≥768px */
 @media (min-width:768px){
@@ -222,6 +222,9 @@ img,svg{display:block}
   .case{padding:32px 28px}
   .req-grid{grid-template-columns:1.15fr 1fr;gap:64px;align-items:start}
   .note{padding:36px 32px;position:sticky;top:calc(var(--header-h) + 24px)}
+  .hero-grid{grid-template-columns:minmax(0,1fr) 460px;column-gap:56px;row-gap:56px;align-items:start}
+  .hero-grid .stats{grid-column:1/-1;margin-top:0}
+  .hero h1{font-size:clamp(2.5rem,3.9vw,3.5rem)}
   .logo{font-size:19px}
 }
 </style>
@@ -240,15 +243,45 @@ img,svg{display:block}
 
   <!-- 1. HERO -->
   <section class="hero" id="top" aria-labelledby="hero-title">
-    <div class="wrap">
-      <span class="kicker">For UK Limited Companies</span>
-      <h1 id="hero-title">Unsecured business funding. Matched to the right lender, <em>decided in days.</em></h1>
-      <p class="hero-sub">Working capital, tax bills, contract funding, growth. No property security required. We assess your situation, match you with the lender on our panel most likely to say yes, and manage the process end to end.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-white" href="#apply">Start the Application</a>
-        <a class="btn btn-ghost" href="#how">How It Works</a>
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="kicker">For UK Limited Companies</span>
+        <h1 id="hero-title">Unsecured business funding. Matched to the right lender, <em>decided in days.</em></h1>
+        <p class="hero-sub">Working capital, tax bills, contract funding, growth. No property security required. We assess your situation, match you with the lender on our panel most likely to say yes, and manage the process end to end.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="#apply">Start the Application</a>
+          <a class="btn btn-ghost" href="#how">How It Works</a>
+        </div>
+        <p class="disclaimer">Funding is subject to lender approval. A personal guarantee is typically required. Lending Sphere is a commercial finance broker, not a lender.</p>
       </div>
-      <p class="disclaimer">Funding is subject to lender approval. A personal guarantee is typically required. Lending Sphere is a commercial finance broker, not a lender.</p>
+
+      <div class="hero-form">
+        <div id="apply" aria-labelledby="apply-title">
+          <h2 class="apply-title" id="apply-title">Start your application.</h2>
+          <p class="apply-sub">Under five minutes. If we can help, you'll get a call from our team. If we can't, we'll tell you straight away rather than waste your time.</p>
+          <p class="fee">£495 application fee · credited against your success fee on completion</p>
+          <!-- GHL FORM EMBED: Lending Sphere Form (c6QTePsks4sXNNiQg7uq) -->
+          <iframe
+            src="https://api.leadconnectorhq.com/widget/form/c6QTePsks4sXNNiQg7uq"
+            style="width:100%;height:100%;border:none;border-radius:8px"
+            id="inline-c6QTePsks4sXNNiQg7uq"
+            data-layout="{'id':'INLINE'}"
+            data-trigger-type="alwaysShow"
+            data-trigger-value=""
+            data-activation-type="alwaysActivated"
+            data-activation-value=""
+            data-deactivation-type="neverDeactivate"
+            data-deactivation-value=""
+            data-form-name="Lending Sphere Form"
+            data-height="721"
+            data-layout-iframe-id="inline-c6QTePsks4sXNNiQg7uq"
+            data-form-id="c6QTePsks4sXNNiQg7uq"
+            data-cookie-consent="true"
+            data-cookie-consent-provider="auto"
+            title="Lending Sphere Form"
+            ></iframe>
+        </div>
+      </div>
 
       <dl class="stats">
         <div class="stat"><dt><strong>£1k – £1m</strong></dt><dd><span>Typical funding range</span></dd></div>
@@ -271,7 +304,7 @@ img,svg{display:block}
         <li class="step">
           <span class="step-num">STEP 01</span>
           <h3>Apply in minutes</h3>
-          <p>Complete the short application below. It tells us who you are, what you need the funding for, and how urgent it is. Takes under five minutes.</p>
+          <p>Complete the short application at the top of this page. It tells us who you are, what you need the funding for, and how urgent it is. Takes under five minutes.</p>
         </li>
         <li class="step">
           <span class="step-num">STEP 02</span>
@@ -346,41 +379,6 @@ img,svg{display:block}
     </div>
   </section>
 
-  <!-- 5. APPLICATION (GHL EMBED SLOT) -->
-  <section class="section section-grey" id="application" aria-labelledby="apply-title">
-    <div class="wrap">
-      <div class="head head-center">
-        <p class="label">Application</p>
-        <h2 class="h2" id="apply-title">Start your application.</h2>
-        <p class="sub">Under five minutes. If we can help, you'll get a call from our team. If we can't, we'll tell you straight away rather than waste your time.</p>
-      </div>
-      <div class="fee-row"><p class="fee">£495 application fee · credited against your success fee on completion</p></div>
-      <div id="apply" aria-label="Application form">
-        <!-- GHL FORM EMBED: Lending Sphere Form (c6QTePsks4sXNNiQg7uq) -->
-        <iframe
-          src="https://api.leadconnectorhq.com/widget/form/c6QTePsks4sXNNiQg7uq"
-          style="width:100%;height:100%;border:none;border-radius:8px"
-          id="inline-c6QTePsks4sXNNiQg7uq"
-          data-layout="{'id':'INLINE'}"
-          data-trigger-type="alwaysShow"
-          data-trigger-value=""
-          data-activation-type="alwaysActivated"
-          data-activation-value=""
-          data-deactivation-type="neverDeactivate"
-          data-deactivation-value=""
-          data-form-name="Lending Sphere Form"
-          data-height="721"
-          data-layout-iframe-id="inline-c6QTePsks4sXNNiQg7uq"
-          data-form-id="c6QTePsks4sXNNiQg7uq"
-          data-cookie-consent="true"
-          data-cookie-consent-provider="auto"
-          title="Lending Sphere Form"
-          ></iframe>
-        <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-      </div>
-    </div>
-  </section>
-
   <!-- 6. FAQ -->
   <section class="section" id="faq" aria-labelledby="faq-title">
     <div class="wrap">
@@ -437,5 +435,6 @@ img,svg{display:block}
     </div>
   </div>
 </footer>
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
 </body>
 </html>
